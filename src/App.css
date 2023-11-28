@@ -36,3 +36,97 @@
     transform: rotate(360deg);
   }
 }
+
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: rgb(255, 255, 255);
+  /* padding: 15px; */
+  box-shadow: 0 4px 6px rgba(77, 102, 128, 0.678); 
+}
+
+.navButton {
+  margin-right: 40px;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #ffffff;
+  
+}
+
+.navButton:hover {
+  background-color: rgb(76, 160, 276); /*  фон при наведении */
+  color: #ffffff; 
+}
+
+.homePage {
+  background: linear-gradient(to right, rgb(76, 160, 236), #ffffff);
+  height: 100vh; 
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+.homePageComp {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 7rem;
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); /* Shadow for text to stand out */
+}
+
+
+.LoginPage,
+.SignupPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Make the container full height of the viewport */
+  background: linear-gradient(to right, rgb(76, 160, 236), #ffffff); /* Set your desired background color here */
+}
+
+/* Add more styles as needed for form elements, etc. */
+form {
+  width: 300px; /* Adjust the form width as needed */
+  padding: 20px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff56; /* Set form background color */
+}
+
+/* Add styling for other elements as needed */
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding: 2px;
+  text-shadow: 5px 5px 5px rgba(84, 83, 83, 0.5);
+}
+
+.error-message {
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+}
+
+.submit {
+border: none;
+border-radius: 15px;
+font-size: 16px;
+cursor: pointer;
+background-color: #ffffff;
+justify-content: center;
+}
+
+.submit:hover {
+  background-color: rgb(76, 160, 276); /*  фон при наведении */
+  color: #ffffff; 
+}
