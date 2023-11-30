@@ -28,7 +28,7 @@ function LoginPage(props) {
     e.preventDefault();
     const requestBody = { email, password };
 
-    axios.post(`${API_URL}/auth/login`, requestBody)
+    axios.post(`${API_URL}/logistics/login`, requestBody)
       .then((response) => {
         console.log('JWT token', response.data.authToken );
       
@@ -73,11 +73,9 @@ function LoginPage(props) {
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 
       <p>Do not have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+      <Link to={"/logistics/signup"}> Sign Up</Link>
     </div>
   )
 }
 
 export default LoginPage;
-
-

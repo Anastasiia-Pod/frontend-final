@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
 function Navbar() {
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext); 
+  const { isLoggedIn, logOutUser ,user } = useContext(AuthContext); 
   return (
     <nav className="navBar">
       
@@ -14,7 +14,7 @@ function Navbar() {
             <button>Projects</button>
           </Link>        
           <button onClick={logOutUser}>Logout</button>
-          <span>{user && user.name}</span>
+          <span>{user.name}</span>
         </>
       )}
  
@@ -22,7 +22,8 @@ function Navbar() {
         <>
           <Link to="/"> <button className="navButton">Home</button> </Link>
           <Link to="/login"> <button className="navButton">Login</button> </Link>
-          <Link to="/signup"> <button className="navButton">Logistic Officer Sign Up</button> </Link>
+          <Link to="/logistics/login"> <button className="navButton">Logistics Login</button> </Link>
+          <Link to="/logistics/signup"> <button className="navButton">Logistic Officer Sign Up</button> </Link>
           <Link to="/signup"> <button className="navButton">Sales Manager Sign Up</button> </Link>
         </>
       )}

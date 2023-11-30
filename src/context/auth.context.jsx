@@ -9,6 +9,7 @@ function AuthProviderWrapper(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
+  const [role,setRole] = useState(null)
 
   const storeToken = (token) => {
     localStorage.setItem('authToken', token);
@@ -40,9 +41,13 @@ function AuthProviderWrapper(props) {
         .then((response) => {
           // If the server verifies that the JWT token is valid  
           const user = response.data;
+          const role = response.data.role
+
+          console.log(role,response.data)
           // Update state variables        
           setIsLoggedIn(true);
           setIsLoading(false);
+          setRole(role)
           setUser(user);
         })
         .catch((error) => {
@@ -72,7 +77,8 @@ function AuthProviderWrapper(props) {
         user,
         storeToken,
         authenticateUser,
-        logOutUser
+        logOutUser,
+        role,
       }}
     >
       {props.children}

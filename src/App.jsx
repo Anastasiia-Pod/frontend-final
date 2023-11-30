@@ -9,6 +9,9 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate"; 
 import IsAnon from "./components/IsAnon"; 
+import LogisticsSignupPage from "./pages/LogisticsSignupPage";
+import LogHomePage from "./pages/LogHomePage";
+import LogLoginPage from "./pages/LogLoginPage";
 
 function App() {
   return (
@@ -32,8 +35,11 @@ function App() {
           element={ <IsPrivate> <EditProjectPage /> </IsPrivate> } 
         />
         
+        <Route path="/logistics/signup" element={<IsAnon> <LogisticsSignupPage /> </IsAnon>} />
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
+        <Route path="/logistics/login" element={<IsAnon> <LogLoginPage /> </IsAnon>} />
+        <Route path="/logHome" element={<IsAnon><LogHomePage/></IsAnon>} />
      
       </Routes>
     </div>
