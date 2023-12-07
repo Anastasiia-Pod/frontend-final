@@ -3,17 +3,23 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
 function Navbar() {
-  const { isLoggedIn, logOutUser ,user } = useContext(AuthContext); 
+  const { isLoggedIn, logOutUser ,user, role } = useContext(AuthContext); 
   return (
     <nav className="navBar">
       
       {/*    UPDATE     */}
-      {isLoggedIn && (
-        <>
-          <Link to="/projects">
-            <button>Projects</button>
-          </Link>        
-          <button onClick={logOutUser}>Logout</button>
+      {isLoggedIn && role === "Logistic Officer"(
+        <> 
+        <Link to="/logistics/home"><button className="navButton">Home</button></Link>
+          <button className="navButton" onClick={logOutUser}>Logout</button>
+          <span>{user.name}</span>
+        </>
+      )}
+
+      {isLoggedIn && role === "Sales Manager"(
+        <>       
+        <Link to="/sales/home"><button className="navButton">Home</button></Link>
+          <button className="navButton" onClick={logOutUser}>Logout</button>
           <span>{user.name}</span>
         </>
       )}
