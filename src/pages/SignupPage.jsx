@@ -29,9 +29,9 @@ function SignupPage(props) {
     // Make an axios request to the API
     // If the POST request is a successful redirect to the login page
     // If the request resolves with an error, set the error message in the state
-    axios.post(`${API_URL}/auth/signup`, requestBody)
+    axios.post(`${API_URL}/sales/signup`, requestBody)
       .then((response) => {
-        navigate('/login');
+        navigate('/sales/login');
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -75,7 +75,7 @@ function SignupPage(props) {
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 
       <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+      <Link to={"/sales/login"}> Login</Link>
     </div>
   )
 }

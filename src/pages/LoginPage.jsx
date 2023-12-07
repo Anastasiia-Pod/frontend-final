@@ -28,7 +28,7 @@ function LoginPage(props) {
     e.preventDefault();
     const requestBody = { email, password };
 
-    axios.post(`${API_URL}/auth/login`, requestBody)
+    axios.post(`${API_URL}/sales/login`, requestBody)
       .then((response) => {
         console.log('JWT token', response.data.authToken );
       
@@ -39,7 +39,7 @@ function LoginPage(props) {
         // to the server's JWT validation endpoint. 
         authenticateUser();
         console.log(role,'role')
-        if(role === 'Logistic Officer') {navigate('/logHome');} else{navigate('/');}                // <== ADD
+        if(role === 'Sales Manager') {navigate('/salesHome');} else{navigate('/');}                // <== ADD
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -73,7 +73,7 @@ function LoginPage(props) {
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 
       <p>Do not have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+      <Link to={"/sales/signup"}> Sign Up</Link>
     </div>
   )
 }

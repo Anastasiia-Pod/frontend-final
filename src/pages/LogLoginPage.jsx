@@ -9,7 +9,7 @@ import { AuthContext } from "../context/auth.context";
 const API_URL = "http://localhost:5005";
 
 
-function LoginPage(props) {
+function LogLoginPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
@@ -39,7 +39,7 @@ function LoginPage(props) {
         // to the server's JWT validation endpoint. 
         authenticateUser();
         console.log(role,'role')
-        if(role === 'Logistic Officer') {navigate('/logHome');} else{navigate('/');}                // <== ADD
+        if(role === 'Logistic Officer') {navigate('/logistics/logHome');} else{navigate('/');}                // <== ADD
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -78,4 +78,4 @@ function LoginPage(props) {
   )
 }
 
-export default LoginPage;
+export default LogLoginPage;

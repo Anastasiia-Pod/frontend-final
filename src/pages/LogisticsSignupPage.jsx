@@ -31,7 +31,7 @@ function LogisticsSignupPage(props) {
     // If the request resolves with an error, set the error message in the state
     axios.post(`${API_URL}/logistics/signup`, requestBody)
       .then((response) => {
-        navigate('/login');
+        navigate('/logistics/login');
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -75,7 +75,7 @@ function LogisticsSignupPage(props) {
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 
       <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+      <Link to={"/logistics/login"}> Login</Link>
     </div>
   )
 }

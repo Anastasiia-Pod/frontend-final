@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeImage from '/images/HomePage.gif';
 
-function HomePage() {
+function LogHomePage() {
   return (
     <div className="homePage">
       <h1 className="homePageComp">SmileMile Logistics</h1>
@@ -10,4 +10,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default LogHomePage;

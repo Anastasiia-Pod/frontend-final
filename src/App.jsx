@@ -36,10 +36,11 @@ function App() {
         />
         
         <Route path="/logistics/signup" element={<IsAnon> <LogisticsSignupPage /> </IsAnon>} />
-        <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
-        <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
+        <Route path="/sales/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
+        <Route path="/sales/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
         <Route path="/logistics/login" element={<IsAnon> <LogLoginPage /> </IsAnon>} />
-        <Route path="/logHome" element={<IsAnon><LogHomePage/></IsAnon>} />
+        <Route path="/logistics/logHome" element={<IsAnon><LogHomePage/></IsAnon>} />
+        <Route path="/salesHome" element={<IsAnon><HomePage/></IsAnon>} />
      
       </Routes>
     </div>

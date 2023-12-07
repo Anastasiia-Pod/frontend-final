@@ -21,10 +21,10 @@ function Navbar() {
       {!isLoggedIn && (
         <>
           <Link to="/"> <button className="navButton">Home</button> </Link>
-          <Link to="/login"> <button className="navButton">Login</button> </Link>
-          <Link to="/logistics/login"> <button className="navButton">Logistics Login</button> </Link>
+          <Link to="/logistics/login"> <button className="navButton">Logistics Officer Login</button> </Link>
           <Link to="/logistics/signup"> <button className="navButton">Logistic Officer Sign Up</button> </Link>
-          <Link to="/signup"> <button className="navButton">Sales Manager Sign Up</button> </Link>
+          <Link to="/sales/login"> <button className="navButton">Sales Manager Login</button> </Link>
+          <Link to="/sales/signup"> <button className="navButton">Sales Manager Sign Up</button> </Link>
         </>
       )}
     </nav>
