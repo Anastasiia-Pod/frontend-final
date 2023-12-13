@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import logHome from '/images/logHome.jpeg';
 
 const API_URL = "http://localhost:5005";
 
@@ -27,11 +28,21 @@ function AddPartner() {
       .catch((error) => console.log(error));
   };
 
+  const partnerAddPageStyle = {
+    height: '100vh',
+    backgroundImage: `url(${logHome})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    display: 'flex',
+    flexDirection: 'column',
+    color: '#fff',
+  }
   return (
-    <div className="AddPartner">
-      <h3>Add New Partner</h3>
+    <div className="addPartner" style={partnerAddPageStyle}>
+      <h3 className="congratsPartner">Add a new Partner</h3>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="partnerContainer">
         <label>Name:</label>
         <input
           type="text"
@@ -68,7 +79,7 @@ function AddPartner() {
           required
         />
 
-        <button type="submit">Add Partner</button>
+        <button type="submit" className="partnerButton">Add Partner</button>
       </form>
     </div>
   );

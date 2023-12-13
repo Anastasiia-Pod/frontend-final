@@ -34,7 +34,7 @@ function PartnerDetailsPage(props) {
   }, []);
 
   return (
-    <div className="PartnerDetails">
+    <div className="partnerDetails">
       {partner && (
         <>
           <PartnerCard {...partner} />
@@ -49,7 +49,7 @@ function PartnerDetailsPage(props) {
       </Link>
 
       <Link to={`/partners/edit/${partnerId}`}>
-        <button>Edit Partner</button>
+        <button >Edit Partner</button>
       </Link>
     </div>
   );

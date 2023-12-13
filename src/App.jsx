@@ -39,7 +39,7 @@ function App() {
         <Route path="/sales/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path="/sales/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
         <Route path="/logistics/login" element={<IsAnon> <LogLoginPage /> </IsAnon>} />
-        <Route path="/logistics/logHome" element={<IsAnon><LogHomePage/></IsAnon>} />
+        <Route path="/logistics/logHome" element={<IsPrivate><LogHomePage/></IsPrivate>} />
         <Route path="/salesHome" element={<IsAnon><HomePage/></IsAnon>} />
      
       </Routes>

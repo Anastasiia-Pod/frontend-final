@@ -59,7 +59,7 @@
 }
 
 .navButton:hover {
-  background-color: rgb(76, 160, 276); /*  фон при наведении */
+  background-color: rgb(76, 160, 276);
   color: #ffffff; 
 }
 
@@ -129,4 +129,83 @@ justify-content: center;
 .submit:hover {
   background-color: rgb(76, 160, 276); /*  фон при наведении */
   color: #ffffff; 
+}
+
+.logLinkButton {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin-left: 700px;
+  margin-bottom: 25px;
+  background-color: rgb(235,235,240);
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.logLinkButton:hover {
+  background-color: rgb(0, 0, 0); 
+  color: #ffffff; 
+}
+
+.logHomePage {
+  height: 100vh;
+}
+
+.congrats {
+  text-align: center;
+  color: rgb(255, 255, 255); 
+  text-shadow: none;
+  padding: 20px; /* Add some padding for better visibility */
+  font-size: 34px; 
+  border-radius: 8px; /* Add rounded corners */
+  margin-bottom: 130px; /* Create space between elements */
+}
+
+.partnerContainer {
+  display: flex;
+  flex-direction: column;
+ margin-left: 726px;
+ justify-content: center;
+ align-items: center;
+ color: black;
+}
+
+.partnerButton {
+  cursor: pointer;
+  border-radius: 15px;
+  border: black;
+  background-color: rgb(242,242,245);
+}
+
+.partnerButton:hover {
+  background-color: rgb(0, 0, 0); 
+  color: #ffffff; 
+}
+
+.congratsPartner {
+  color: rgb(255, 255, 255); 
+  text-shadow: none;
+  padding: 20px; 
+  font-size: 34px; 
+  border-radius: 8px;
+  margin-left: 100px;
+  margin-bottom: 130px; 
+}
+
+.deletePartnerButton {
+  cursor: pointer;
+  border-radius: 15px;
+  border: black;
+  border-color: black;
+  border-width: 1px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  width: 160px;
+  margin-top: 75px;
+  margin-left: 820px;
+}
+
+.deletePartnerButton:hover {
+  background-color: white;
+  color: black;
 }

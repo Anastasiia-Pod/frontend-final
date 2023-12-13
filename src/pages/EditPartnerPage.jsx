@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
+import logHome from '/images/logHome.jpeg';
 
 const API_URL = "http://localhost:5005";
 
@@ -56,11 +57,22 @@ function EditPartnerPage() {
       .catch((error) => console.log(error));
   };
 
-  return (
-    <div className="EditPartnerPage">
-      <h3>Edit the Partner</h3>
+  const partnerAddPageStyle = {
+    height: '100vh',
+    backgroundImage: `url(${logHome})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    display: 'flex',
+    flexDirection: 'column',
+    color: '#fff',
+  }
 
-      <form onSubmit={handleFormSubmit}>
+  return (
+    <div className="editPartnerPage" style={partnerAddPageStyle}>
+      <h3 className="congratsPartner">Edit a Partner</h3>
+
+      <form onSubmit={handleFormSubmit} className="partnerContainer">
         <label>Name:</label>
         <input
           type="text"
@@ -93,10 +105,10 @@ function EditPartnerPage() {
           onChange={(e) => setPostcode(e.target.value)}
         />
 
-        <button type="submit">Update Partner</button>
+        <button type="submit" className="partnerButton">Update Partner</button>
       </form>
 
-      <button onClick={deletePartner}>Delete Partner</button>
+      <button onClick={deletePartner} className="deletePartnerButton">Delete Partner</button>
     </div>
   );
 }
