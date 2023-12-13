@@ -10,7 +10,7 @@ function Navbar() {
       {/*    UPDATE     */}
       {isLoggedIn && role === "Logistic Officer" && (
         <> 
-        <Link to="/logistics/home"><button className="navButton">Home</button></Link>
+        <Link to="/logistics/logHome"><button className="navButton">Home</button></Link>
           <button className="navButton" onClick={logOutUser}>Logout</button>
           <span>{user.name}</span>
         </>
