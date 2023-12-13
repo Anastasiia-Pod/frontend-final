@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import PartnerCard from "../components/PartnerCard";
-import AddPartner from "../components/AddPartner";
 
 const API_URL = "http://localhost:5005";
 
@@ -31,7 +30,6 @@ function PartnerListPage() {
 
   return (
     <div className="PartnerListPage">
-      <AddPartner refreshPartners={getAllPartners} />
 
       {partners.map((partner) => (
         <PartnerCard key={partner._id} {...partner} />

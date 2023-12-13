@@ -104,11 +104,10 @@ function EditPartnerPage() {
           value={postcode}
           onChange={(e) => setPostcode(e.target.value)}
         />
-
         <button type="submit" className="deletePartnerButton">Update Partner</button>
   
 
-      <button onClick={deletePartner} className="deletePartnerButton">Delete Partner</button>
+  <button onClick={deletePartner} className="deletePartnerButton">Delete Partner</button>
       </form>
     </div>
   );

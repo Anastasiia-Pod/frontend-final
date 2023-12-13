@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import PartnerListPage from "./pages/PartnerListPage";
 import PartnerDetailsPage from "./pages/PartnerDetailsPage";
 import EditPartnerPage from "./pages/EditPartnerPage";
+import AddPartner from "./components/AddPartner";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate"; 
@@ -12,6 +13,8 @@ import IsAnon from "./components/IsAnon";
 import LogisticsSignupPage from "./pages/LogisticsSignupPage";
 import LogHomePage from "./pages/LogHomePage";
 import LogLoginPage from "./pages/LogLoginPage";
+
+
 
 function App() {
   return (
@@ -31,10 +34,16 @@ function App() {
         />
  
         <Route
-          path="/partners/edit/:projectId"
+          path="/partners/:partnerId"
           element={ <IsPrivate> <EditPartnerPage /> </IsPrivate> } 
         />
+
+        <Route
+          path="/partners/new"
+          element={ <IsPrivate> <AddPartner /> </IsPrivate> } 
+        />
         
+
         <Route path="/logistics/signup" element={<IsAnon> <LogisticsSignupPage /> </IsAnon>} />
         <Route path="/sales/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path="/sales/login" element={<IsAnon> <LoginPage /> </IsAnon>} />

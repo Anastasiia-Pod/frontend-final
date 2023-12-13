@@ -14,6 +14,7 @@ function AddPartner() {
   const city = "Berlin";
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     const requestBody = { name, address: { country, city, street, home, postcode } };
 
     axios
@@ -80,6 +81,9 @@ function AddPartner() {
         />
 
         <button type="submit" className="partnerButton">Add Partner</button>
+        {/* <Link to="/logistics/partners">
+        <button className="partnerButton">All Partners</button>
+      </Link> */}
       </form>
     </div>
   );
