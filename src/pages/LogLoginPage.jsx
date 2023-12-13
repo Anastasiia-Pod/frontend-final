@@ -17,19 +17,20 @@ function LogLoginPage(props) {
   const navigate = useNavigate();
   
   /*  UPDATE - get authenticateUser from the context */
-  const { storeToken, authenticateUser , role } = useContext(AuthContext);
+  const { storeToken, authenticateUser , role,user } = useContext(AuthContext);
 
   
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
-  
-  const handleLoginSubmit = (e) => {
+  console.log('here we are')
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
     const requestBody = { email, password };
 
-    axios.post(`${API_URL}/logistics/login`, requestBody)
-      .then((response) => {
+    try{
+   const response =  await axios.post(`${API_URL}/logistics/login`, requestBody)
+      
         console.log('JWT token', response.data.authToken );
       
         // Save the token in the localStorage.      
@@ -37,15 +38,19 @@ function LogLoginPage(props) {
         
         // Verify the token by sending a request 
         // to the server's JWT validation endpoint. 
-        authenticateUser();
-        console.log(role,'role')
-        if(role === 'Logistic Officer') {navigate('/logistics/logHome');} else{navigate('/');}                // <== ADD
-      })
-      .catch((error) => {
+         await authenticateUser() 
+
+        //  console.log(role,'role',user)
+        // if(role === 'Logistic Officer') {navigate('/logistics/logHome');}
+                         // <== ADD
+      }
+      catch(error){
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
-      })
+      }
   };
+
+  
   
   return (
     <div className="LoginPage">

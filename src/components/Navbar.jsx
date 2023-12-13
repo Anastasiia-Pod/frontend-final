@@ -8,7 +8,7 @@ function Navbar() {
     <nav className="navBar">
       
       {/*    UPDATE     */}
-      {isLoggedIn && role === "Logistic Officer"(
+      {isLoggedIn && role === "Logistic Officer" && (
         <> 
         <Link to="/logistics/home"><button className="navButton">Home</button></Link>
           <button className="navButton" onClick={logOutUser}>Logout</button>
@@ -16,7 +16,7 @@ function Navbar() {
         </>
       )}
 
-      {isLoggedIn && role === "Sales Manager"(
+      {isLoggedIn && role === "Sales Manager" && (
         <>       
         <Link to="/sales/home"><button className="navButton">Home</button></Link>
           <button className="navButton" onClick={logOutUser}>Logout</button>

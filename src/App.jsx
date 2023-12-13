@@ -2,9 +2,9 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
-import ProjectListPage from "./pages/ProjectListPage";
-import ProjectDetailsPage from "./pages/ProjectDetailsPage";
-import EditProjectPage from "./pages/EditProjectPage";
+import PartnerListPage from "./pages/PartnerListPage";
+import PartnerDetailsPage from "./pages/PartnerDetailsPage";
+import EditPartnerPage from "./pages/EditPartnerPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate"; 
@@ -21,18 +21,18 @@ function App() {
       <Routes>      
         <Route exact path="/" element={<HomePage />} />
         <Route
-          path="/projects"
-          element={ <IsPrivate> <ProjectListPage /> </IsPrivate> } 
+          path="/logistics/partners"
+          element={ <IsPrivate> <PartnerListPage /> </IsPrivate> } 
         />
  
         <Route
-          path="/projects/:projectId"
-          element={ <IsPrivate> <ProjectDetailsPage /> </IsPrivate> }
+          path="/logistics/partners/:partnerId"
+          element={ <IsPrivate> <PartnerDetailsPage /> </IsPrivate> }
         />
  
         <Route
-          path="/projects/edit/:projectId"
-          element={ <IsPrivate> <EditProjectPage /> </IsPrivate> } 
+          path="/partners/edit/:projectId"
+          element={ <IsPrivate> <EditPartnerPage /> </IsPrivate> } 
         />
         
         <Route path="/logistics/signup" element={<IsAnon> <LogisticsSignupPage /> </IsAnon>} />

@@ -17,14 +17,14 @@ function LoginPage(props) {
   const navigate = useNavigate();
   
   /*  UPDATE - get authenticateUser from the context */
-  const { storeToken, authenticateUser , role } = useContext(AuthContext);
+  const { storeToken, authenticateUser , role ,isLoading} = useContext(AuthContext);
 
   
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
   
-  const handleLoginSubmit = (e) => {
+  const handleLoginSubmit = async(e) => {
     e.preventDefault();
     const requestBody = { email, password };
 
@@ -37,7 +37,10 @@ function LoginPage(props) {
         
         // Verify the token by sending a request 
         // to the server's JWT validation endpoint. 
-        authenticateUser();
+         authenticateUser();
+
+
+
         console.log(role,'role')
         if(role === 'Sales Manager') {navigate('/salesHome');} else{navigate('/');}                // <== ADD
       })
