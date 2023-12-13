@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import PropTypes from "prop-types"; 
 const API_URL = "http://localhost:5005";
 
 const AuthContext = React.createContext();
@@ -87,5 +88,9 @@ function AuthProviderWrapper(props) {
     </AuthContext.Provider>
   )
 }
+
+AuthProviderWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export { AuthProviderWrapper, AuthContext };
