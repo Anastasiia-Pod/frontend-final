@@ -43,14 +43,6 @@ function PartnerDetailsPage(props) {
 
       {/*  */}
       <AddPartner refreshPartner={getPartner} partnerId={partnerId} />
-{/* 
-      <Link to="/partners">
-        <button>Back to partners</button>
-      </Link>
-
-      <Link to={`/partners/edit/${partnerId}`}>
-        <button >Edit Partner</button>
-      </Link> */}
     </div>
   );
 }

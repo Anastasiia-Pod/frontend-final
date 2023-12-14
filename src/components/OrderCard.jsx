@@ -1,62 +1,43 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import PartnerCard from "./PartnerCard";
 
-const API_URL = "http://localhost:5005";
-
-const OrderComponent = ({ partnerId }) => {
-  const [requestText, setRequestText] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const orderData = {
-      partnerId,
-      requestText,
-      dateTime: new Date(), // Add the current date and time of the order
-    };
-
-    axios
-      .post(`${API_URL}/api/orders`, orderData)
-      .then((response) => {
-        // Handle successful order submission (optional)
-        console.log("Order submitted successfully");
-      })
-      .catch((error) => {
-        // Handle error (optional)
-        console.error("Error submitting order", error);
-      });
-  };
+const OrderCard = ({ name, address, _id, good}) => {
+  const { street, home, postcode, country, city } = address;
+  const {goodname, weight} = good;
 
   return (
-    <div className="OrderComponent" style={{ backgroundColor: "rgba(211, 228, 248, 0.7)" }}>
-      <h3>Place an Order</h3>
-
-      {/* Display Partner's Name and Address based on partnerId */}
-      <div>
-        <p>Partner's Name: {/* Retrieve and display partner's name from the database based on partnerId */}</p>
-        <p>Partner's Address: {/* Retrieve and display partner's address from the database based on partnerId */}</p>
-      </div>
-
-      {/* Request Text Input */}
-      <form onSubmit={handleSubmit}>
-        <label>Request Text:</label>
-        <textarea
-          value={requestText}
-          onChange={(e) => setRequestText(e.target.value)}
-          required
-        />
-
-        {/* Submit Button */}
-        <button type="submit">Submit Order</button>
-      </form>
-
+    <div className="PartnerCard card" style={{ backgroundColor: "rgba(76, 160, 236, 0.4)", color: "black"}}>
+      <Link to={`/partners/${_id}`}>
+        <h3 style={{ color: "black"}}>{name}</h3>
+      </Link>
+      <p>Country: {country}</p>
+      <p>City: {city}</p>
+      <p>Street: {street}</p>
+      <p>Home: {home}</p>
+      <p>Postcode: {postcode}</p>
+      <p>Goods: {goodname}</p>
+      <p>Weight: {weight}</p>
     </div>
   );
 };
 
-OrderComponent.propTypes = {
-  partnerId: PropTypes.string.isRequired,
+OrderCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  address: PropTypes.shape({
+    street: PropTypes.string.isRequired,
+    home: PropTypes.number.isRequired,
+    postcode: PropTypes.number.isRequired,
+    country: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+  }).isRequired,
+  _id: PropTypes.string.isRequired,
+  good: PropTypes.shape({
+    goodname: PropTypes.string.isRequired,
+    weight: PropTypes.number.isRequired,
+}).isRequired,
 };
 
-export default OrderComponent;
+export default PartnerCard;
+  

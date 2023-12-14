@@ -13,6 +13,7 @@ import IsAnon from "./components/IsAnon";
 import LogisticsSignupPage from "./pages/LogisticsSignupPage";
 import LogHomePage from "./pages/LogHomePage";
 import LogLoginPage from "./pages/LogLoginPage";
+import OrderPage from "./pages/OrderCreatePage";
 
 
 
@@ -41,6 +42,11 @@ function App() {
         <Route
           path="/partners/new"
           element={ <IsPrivate> <AddPartner /> </IsPrivate> } 
+        />
+
+<Route
+          path="/logistics/orders/new"
+          element={ <IsPrivate> <OrderPage /> </IsPrivate> } 
         />
         
 
